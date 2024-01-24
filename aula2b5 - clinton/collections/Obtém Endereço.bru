@@ -1,0 +1,22 @@
+meta {
+  name: Obtém Endereço
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/endereco
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "ieendereco": 1,
+    "nomerua": "Rua Renato Santos Teixeira",
+    "numero": 30,
+    "bairro": "Luzia",
+    "cidade": "Aracaju",
+    "estado": "Sergipe"
+  }
+}

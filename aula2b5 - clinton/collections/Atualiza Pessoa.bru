@@ -1,0 +1,21 @@
+meta {
+  name: Atualiza Pessoa
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:8080/pessoa
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "idpessoa": 1,
+    "nomepessoa": "Bill",
+    "idadepessoa": 31,
+    "emailpessoa": "clintoncsb@gmail.com",
+    "idendereco": 1
+  }
+}

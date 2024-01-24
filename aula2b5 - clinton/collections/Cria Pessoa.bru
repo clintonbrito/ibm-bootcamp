@@ -1,0 +1,21 @@
+meta {
+  name: Cria Pessoa
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/pessoa
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "idpessoa": 1,
+    "nomepessoa": "Bill",
+    "idadepessoa": 31,
+    "emailpessoa": "clintoncsb@gmail.com",
+    "idendereco": 1
+  }
+}
