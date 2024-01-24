@@ -31,11 +31,6 @@ public class EnderecoController {
         }
     }
 
-    @DeleteMapping
-    public void apagarEndereco(@PathParam("id") Integer id) {
-        enderecoService.apagarEndereco(id);
-    }
-
     @PutMapping
     public ResponseEntity atualizarEndereco(@RequestBody EnderecoEntity endereco) {
         if(endereco.getId() != null) {
@@ -44,5 +39,10 @@ public class EnderecoController {
         } else {
             return ResponseEntity.status(500).build();
         }
+    }
+
+    @DeleteMapping
+    public void apagarEndereco(@PathParam("id") Integer id) {
+        enderecoService.apagarEndereco(id);
     }
 }

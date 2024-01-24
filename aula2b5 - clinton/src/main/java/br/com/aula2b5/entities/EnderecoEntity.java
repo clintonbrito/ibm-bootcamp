@@ -1,5 +1,7 @@
 package br.com.aula2b5.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,5 +32,6 @@ public class EnderecoEntity {
     private String estado;
 
     @OneToOne(mappedBy = "endereco")
+    @JsonBackReference // Source: https://stackoverflow.com/questions/47693110/could-not-write-json-infinite-recursion-stackoverflowerror-nested-exception
     private PessoaEntity pessoa;
 }

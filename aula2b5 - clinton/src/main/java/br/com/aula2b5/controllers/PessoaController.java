@@ -31,11 +31,6 @@ public class PessoaController {
         }
     }
 
-    @DeleteMapping
-    public void apagarPessoa(@PathParam("id") Integer id){
-        pessoaService.apagarPessoa(id);
-    }
-
     @PutMapping
     public ResponseEntity atualizarPessoa(@RequestBody PessoaEntity pessoa){
         if(pessoa.getId() != null) {
@@ -44,5 +39,10 @@ public class PessoaController {
         } else {
             return ResponseEntity.status(500).build();
         }
+    }
+
+    @DeleteMapping
+    public void apagarPessoa(@PathParam("id") Integer id){
+        pessoaService.apagarPessoa(id);
     }
 }
