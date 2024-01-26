@@ -1,0 +1,20 @@
+meta {
+  name: Delete Pessoa
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:3000/pessoa/6
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "Yan Almeida",
+    "idade": 55,
+    "email": "yansantana@ibm.com",
+    "genero": 2
+  }
+}

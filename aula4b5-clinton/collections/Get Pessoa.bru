@@ -1,0 +1,17 @@
+meta {
+  name: Get Pessoa
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/pessoa
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "yansantana@ibm.com"
+  }
+}

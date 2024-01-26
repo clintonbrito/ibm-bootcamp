@@ -1,0 +1,21 @@
+meta {
+  name: Put Pessoa
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3000/pessoa
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": 1,
+    "nome": "Yan Almeida",
+    "idade": 56,
+    "email": "yansantana@ibm.com",
+    "genero": 2
+  }
+}
