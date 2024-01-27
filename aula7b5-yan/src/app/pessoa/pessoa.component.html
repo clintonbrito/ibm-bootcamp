@@ -1,0 +1,29 @@
+<p *ngIf="estaCarregando">
+    <app-loading [carregando]="estaCarregando"></app-loading>
+</p>
+<div *ngIf="!estaCarregando">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th>Acao</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pessoa of listaPessoas; index as i">
+                <td>{{pessoa.id}}</td>
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.idade}}</td>
+                <td>{{pessoa.email}}</td>
+                <td>
+                    <button (click)="selecionaPessoa(pessoa)">A</button>
+                    <button (click)="apagarPessoaSelecionada(pessoa.id)">X</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-form-pessoa [pessoa]="pessoaSelecionada" (statusParaAtualizacao)="consultarTodasPessoas()"></app-form-pessoa>
