@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <td>Nome:</td>
+        <td><input type="text" placeholder="Insira o nome!" [(ngModel)]="pessoa!.nome"/></td>
+    </tr>
+    <tr>
+        <td>Idade:</td>
+        <td><input type="text" placeholder="Insira o idade!" [(ngModel)]="pessoa!.idade"/></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><input type="text" placeholder="Insira o email!" [(ngModel)]="pessoa!.email"/></td>
+    </tr>
+    <tr>
+        <td>Genero:</td>
+        <td>
+            <select name="" id="">
+                <option>Selecione</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<button (click)="salvar()" *ngIf="!pessoa.id">Salvar</button>
+<button (click)="alterar()" *ngIf="pessoa.id">Alterar</button>
+<button (click)="limpar()">Limpar</button>
