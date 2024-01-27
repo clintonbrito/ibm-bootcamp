@@ -1,0 +1,34 @@
+<p *ngIf="estaCarregando">
+    <app-loading [carregando]="estaCarregando"></app-loading>
+</p>
+<div *ngIf="!estaCarregando">
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Altura</th>
+                <th>Peso</th>
+                <th>Genero</th>
+                <th>Ano de nascimento</th>
+                <th>Cachorro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pessoa of respostaPessoas.results; index as i">
+                <td>{{pessoa.name}}</td>
+                <td>{{pessoa.height}}</td>
+                <td>{{pessoa.mass}}</td>
+                <td>{{pessoa.gender}}</td>
+                <td>{{pessoa.birth_year}}</td>
+                <td>
+                    <span *ngIf="pessoa.cachorro">
+                        <img [src]="pessoa.cachorro" alt="cachorro" height="150px"/>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button [disabled]="!respostaPessoas.previous" (click)="recuperarPessoas(respostaPessoas.previous, false)">Voltar</button>
+    <button [disabled]="!respostaPessoas.next" (click)="recuperarPessoas(respostaPessoas.next, false)">Avançar</button><br/>
+    Total: {{respostaPessoas.count}}
+</div>
